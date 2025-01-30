@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqu7vxw1l65a6"]
+
+[ext_resource type="Script" path="res://scripts/pozdyakoin.gd" id="1_1m807"]
+[ext_resource type="Texture2D" uid="uid://dcbd08f10454y" path="res://sprites/pozdnyacoin_final.png" id="2_wlffl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3f73p"]
+atlas = ExtResource("2_wlffl")
+region = Rect2(3, 2, 596, 596)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2s4gl"]
+radius = 57.3149
+
+[node name="Pozdyakoin" type="StaticBody2D"]
+script = ExtResource("1_1m807")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.189978, 0.189978)
+texture = SubResource("AtlasTexture_3f73p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2s4gl")

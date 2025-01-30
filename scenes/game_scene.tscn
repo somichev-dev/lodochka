@@ -1,0 +1,218 @@
+[gd_scene load_steps=11 format=3 uid="uid://bsmsi7uuiepm0"]
+
+[ext_resource type="Script" path="res://scripts/test_scene.gd" id="1_jom2y"]
+[ext_resource type="PackedScene" uid="uid://csiot1qdb7cqb" path="res://scenes/boat.tscn" id="2_mpj2w"]
+[ext_resource type="Script" path="res://scripts/props.gd" id="3_xuoln"]
+[ext_resource type="PackedScene" uid="uid://dt25co1e1lknl" path="res://scenes/UI.tscn" id="4_fe5g3"]
+[ext_resource type="Script" path="res://scenes/audio_stream_player.gd" id="5_dbuih"]
+[ext_resource type="AudioStream" uid="uid://b5kavg77dwrjp" path="res://sounds/boat_music.wav" id="6_4d24r"]
+[ext_resource type="Script" path="res://scripts/barriers.gd" id="7_w6p1c"]
+[ext_resource type="PackedScene" uid="uid://c0nfbrl682kdm" path="res://scenes/buoy.tscn" id="8_3e52f"]
+[ext_resource type="Script" path="res://scripts/buoy.gd" id="8_bxgvf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gy0xv"]
+size = Vector2(118, 2597)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_jom2y")
+
+[node name="Boat" parent="." groups=["player"] instance=ExtResource("2_mpj2w")]
+unique_name_in_owner = true
+position = Vector2(720, 200)
+
+[node name="Props" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(720, 0)
+script = ExtResource("3_xuoln")
+
+[node name="DifficultyIncreaseTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.25
+autostart = true
+
+[node name="UI" parent="." instance=ExtResource("4_fe5g3")]
+unique_name_in_owner = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+max_polyphony = 16
+script = ExtResource("5_dbuih")
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("6_4d24r")
+volume_db = -8.0
+autoplay = true
+
+[node name="Barriers" type="Node2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(720, 0)
+script = ExtResource("7_w6p1c")
+
+[node name="LeftBarrier" type="StaticBody2D" parent="Barriers"]
+unique_name_in_owner = true
+position = Vector2(-655, 0)
+script = ExtResource("8_bxgvf")
+
+[node name="Buoy3" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, -85)
+metadata/_edit_group_ = true
+
+[node name="Buoy19" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, -265)
+metadata/_edit_group_ = true
+
+[node name="Buoy4" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 95)
+metadata/_edit_group_ = true
+
+[node name="Buoy5" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 275)
+metadata/_edit_group_ = true
+
+[node name="Buoy6" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 455)
+metadata/_edit_group_ = true
+
+[node name="Buoy7" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 635)
+metadata/_edit_group_ = true
+
+[node name="Buoy8" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 815)
+metadata/_edit_group_ = true
+
+[node name="Buoy9" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 995)
+metadata/_edit_group_ = true
+
+[node name="Buoy10" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1175)
+metadata/_edit_group_ = true
+
+[node name="Buoy11" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1355)
+metadata/_edit_group_ = true
+
+[node name="Buoy12" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1535)
+metadata/_edit_group_ = true
+
+[node name="Buoy13" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1715)
+metadata/_edit_group_ = true
+
+[node name="Buoy14" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1895)
+metadata/_edit_group_ = true
+
+[node name="Buoy15" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2075)
+metadata/_edit_group_ = true
+
+[node name="Buoy16" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2255)
+metadata/_edit_group_ = true
+
+[node name="Buoy17" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2435)
+metadata/_edit_group_ = true
+
+[node name="Buoy18" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2615)
+metadata/_edit_group_ = true
+
+[node name="Buoy20" parent="Barriers/LeftBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2795)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/LeftBarrier"]
+position = Vector2(0, 1272.5)
+shape = SubResource("RectangleShape2D_gy0xv")
+
+[node name="RightBarrier" type="StaticBody2D" parent="Barriers"]
+unique_name_in_owner = true
+position = Vector2(655, 0)
+script = ExtResource("8_bxgvf")
+
+[node name="Buoy3" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, -85)
+metadata/_edit_group_ = true
+
+[node name="Buoy19" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, -265)
+metadata/_edit_group_ = true
+
+[node name="Buoy4" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 95)
+metadata/_edit_group_ = true
+
+[node name="Buoy5" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 275)
+metadata/_edit_group_ = true
+
+[node name="Buoy6" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 455)
+metadata/_edit_group_ = true
+
+[node name="Buoy7" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 635)
+metadata/_edit_group_ = true
+
+[node name="Buoy8" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 815)
+metadata/_edit_group_ = true
+
+[node name="Buoy9" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 995)
+metadata/_edit_group_ = true
+
+[node name="Buoy10" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1175)
+metadata/_edit_group_ = true
+
+[node name="Buoy11" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1355)
+metadata/_edit_group_ = true
+
+[node name="Buoy12" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1535)
+metadata/_edit_group_ = true
+
+[node name="Buoy13" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1715)
+metadata/_edit_group_ = true
+
+[node name="Buoy14" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 1895)
+metadata/_edit_group_ = true
+
+[node name="Buoy15" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2075)
+metadata/_edit_group_ = true
+
+[node name="Buoy16" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2255)
+metadata/_edit_group_ = true
+
+[node name="Buoy17" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2435)
+metadata/_edit_group_ = true
+
+[node name="Buoy18" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2615)
+metadata/_edit_group_ = true
+
+[node name="Buoy20" parent="Barriers/RightBarrier" groups=["buoy"] instance=ExtResource("8_3e52f")]
+position = Vector2(0, 2795)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Barriers/RightBarrier"]
+position = Vector2(0, 1272.5)
+shape = SubResource("RectangleShape2D_gy0xv")
+
+[connection signal="coins_changed" from="." to="UI" method="_on_coins_changed"]
+[connection signal="game_over" from="." to="UI" method="_on_game_over"]
+[connection signal="timeout" from="DifficultyIncreaseTimer" to="Props" method="_on_difficulty_increase_timer_timeout"]
+[connection signal="timeout" from="DifficultyIncreaseTimer" to="Barriers/LeftBarrier" method="_on_difficulty_increase_timer_timeout"]
+[connection signal="timeout" from="DifficultyIncreaseTimer" to="Barriers/RightBarrier" method="_on_difficulty_increase_timer_timeout"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

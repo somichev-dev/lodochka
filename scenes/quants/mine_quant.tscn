@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://oc4ivdcaydsv"]
+
+[ext_resource type="PackedScene" uid="uid://cq646henqveun" path="res://scenes/mine.tscn" id="1_i4hpu"]
+
+[node name="MineQuant" type="Node2D"]
+position = Vector2(173, 0)
+
+[node name="Mine2" parent="." instance=ExtResource("1_i4hpu")]

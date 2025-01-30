@@ -1,0 +1,156 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbddrocwlch0l"]
+
+[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_ax6cv"]
+[ext_resource type="Theme" uid="uid://bq4kuek04nl24" path="res://themes/ui_theme.tres" id="1_m4wmm"]
+[ext_resource type="Script" path="res://scripts/credits_panel.gd" id="3_24f5r"]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ax6cv")
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -470.0
+offset_top = -489.0
+offset_right = 470.0
+offset_bottom = 489.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="StartButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_m4wmm")
+text = "Начать игру"
+
+[node name="AboutButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_m4wmm")
+text = "Авторы"
+
+[node name="ExitButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("1_m4wmm")
+text = "Выйти"
+
+[node name="CoinLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -251.0
+offset_top = 156.0
+offset_right = 251.0
+offset_bottom = 331.0
+grow_horizontal = 2
+theme = ExtResource("1_m4wmm")
+text = "Монетки: 0000000
+рекорд: 0000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -301.0
+offset_top = -202.0
+offset_right = 301.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_m4wmm")
+text = "версия 0.0.1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CreditsPanel" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_24f5r")
+
+[node name="BoxContainer" type="BoxContainer" parent="CreditsPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="CreditsLabel" type="RichTextLabel" parent="CreditsPanel/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("1_m4wmm")
+bbcode_enabled = true
+text = "[center]
+somichev.dev - код
+aiacaxapa - графика
+
+отдельное спасибо всем тестировщикам
+
+сделано за 24 часа в рамках
+учебного проекта
+
+использованные ресурсы:
+Huge Explosion5.flac by CGEffex -- https://freesound.org/s/93845/ -- License: Attribution NonCommercial 4.0
+
+bebas neue regular by Dharma Type"
+fit_content = true
+
+[node name="CloseCreditsButton" type="Button" parent="CreditsPanel/BoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("1_m4wmm")
+text = "НАЗАД"
+
+[node name="TitleLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.0
+offset_top = 497.0
+offset_right = 353.0
+offset_bottom = 677.0
+grow_horizontal = 2
+theme = ExtResource("1_m4wmm")
+theme_override_font_sizes/font_size = 180
+text = "Flappy Boat"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="ButtonContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="ButtonContainer/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="visibility_changed" from="CreditsPanel" to="CreditsPanel" method="_on_visibility_changed"]
+[connection signal="pressed" from="CreditsPanel/BoxContainer/CloseCreditsButton" to="CreditsPanel" method="_on_close_credits_button_pressed"]

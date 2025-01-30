@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhb5c2nwel2yp"]
+
+[ext_resource type="PackedScene" uid="uid://cwnj5a5facwwb" path="res://scenes/quants/coin.tscn" id="1_73pwl"]
+
+[node name="CoinQuant" type="Node2D"]
+
+[node name="Coin3" parent="." instance=ExtResource("1_73pwl")]

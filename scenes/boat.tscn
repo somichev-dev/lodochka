@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://csiot1qdb7cqb"]
+
+[ext_resource type="Script" path="res://scripts/player_script.gd" id="1_eeltm"]
+[ext_resource type="Texture2D" uid="uid://dlpq5vn5ae0cs" path="res://sprites/sprites.png" id="2_d2ihu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7fubn"]
+atlas = ExtResource("2_d2ihu")
+region = Rect2(39, 19, 277, 610)
+
+[node name="Boat" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_eeltm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.45, 0.45)
+texture = SubResource("AtlasTexture_7fubn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+rotation = 1.5708
+scale = Vector2(2.34177, 2.34177)
+polygon = PackedVector2Array(58, 26, 58, -26, -17, -26, -58, 0, -17, 26)

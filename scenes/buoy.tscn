@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0nfbrl682kdm"]
+
+[ext_resource type="Texture2D" uid="uid://dlpq5vn5ae0cs" path="res://sprites/sprites.png" id="1_o2bba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnke1"]
+atlas = ExtResource("1_o2bba")
+region = Rect2(130, 945, 398, 547)
+
+[node name="Buoy" type="Sprite2D"]
+scale = Vector2(0.3, 0.3)
+texture = SubResource("AtlasTexture_mnke1")
